@@ -101,15 +101,20 @@ ip=${ip:-"10.0.0.1"}
 echo "您的后台地址为: $ip"
 cp -rf devices/common/* ./
 cp -rf devices/$firmware/* ./
+
+# 公共 diy
 if [ -f "devices/common/diy.sh" ]; then
 		chmod +x devices/common/diy.sh
 		/bin/bash "devices/common/diy.sh"
 fi
+
+# 设备 diy
 if [ -f "devices/$firmware/diy.sh" ]; then
 		chmod +x devices/$firmware/diy.sh
 		/bin/bash "devices/$firmware/diy.sh"
 fi
 cp -Rf ./diy/* ./
+
 if [ -f "devices/common/default-settings" ]; then
 	sed -i 's/10.0.0.1/$ip/' package/*/*/my-default-settings/files/etc/uci-defaults/99-default-settings
 fi
