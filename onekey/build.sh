@@ -12,7 +12,7 @@ sudo apt-get upgrade
 
 
 
-clear 
+# clear 
 echo
 echo 
 echo 
