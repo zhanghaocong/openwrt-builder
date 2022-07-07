@@ -67,7 +67,7 @@
 +	done; \
 +	$(OPKG) install --force-overwrite --force-checksum --force-depends $(BUILD_PACKAGES); \
 +	$(OPKG) install $$packages || true
-+	$(OPKG) install --force-overwrite --force-checksum --force-depends --force-maintainer --force-reinstall my-default-settings
+# +	$(OPKG) install --force-overwrite --force-checksum --force-depends --force-maintainer --force-reinstall my-default-settings
  
  prepare_rootfs: FORCE
  	@echo
